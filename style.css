@@ -1,0 +1,989 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f8f8;
+
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.logo {
+    font-weight: bold;
+        font-size: 28px;
+        font-family: 'Segoe UI', sans-serif;
+        color: #333;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+    color: #0056b3;
+    transform: translateY(-5px);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-family: 'Space Mono', monospace;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+    background-color: #0056b3;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+/* Adding Responsiveness to navbar section */
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        display: none;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        padding: 15px 20px;
+        
+    }
+
+    .nav-links li a {
+        font-size: 18px;
+        padding: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Hero Section */
+
+.hero-left img {
+    width: 450px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-left: -100px;
+    height: 500px;
+    object-fit: cover;
+
+
+}
+
+.hero-right {
+    flex: 1;
+    min-width: 280px;
+    margin-left: 60px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.hero-right span{
+    color: #0056b3;
+        
+}
+
+.intro {
+    font-weight: bold;
+    font-family: 'Courier New', cursive;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-family: 'Courier New', cursive;
+}
+
+.name span {
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'Courier New', cursive;
+    color: #0056b3;
+}
+
+/* Adding Responsiveness to Hero Section */
+
+@media (max-width: 1024px) {
+    .hero-left img {
+        width: 350px;
+       height: 400px;
+        margin-left: 0;
+    }
+
+    .hero-right {
+        margin-left: 30px;
+    }
+
+    .intro,
+    .name {
+        font-size: 28px;
+    }
+
+    .name span {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* For smaller screens */
+    .hero-left img {
+        width: 100%;
+        height: 300px;
+        margin-left: 0;
+    }
+
+    .hero-right {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .intro {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .name span {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For very small screens */
+    .hero-left img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .hero-right {
+        margin-left: 0;
+        padding: 0 10px;
+    }
+
+    .intro,
+    .name {
+        font-size: 22px;
+    }
+
+    .name span {
+        font-size: 26px;
+    }
+}
+
+/* About Section */
+
+
+.about-section {
+    padding: 80px 20px;
+    color: #111;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.intro-line {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.iam {
+    font-size: 24px;
+    margin-right: 10px;
+    padding-top: 5px;
+}
+
+.roles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'Courier New', cursive;
+    color: black;
+    margin-left: 100px;
+}
+
+.role {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 36px;
+    font-family: 'Courier New', cursive;
+    margin: 10px 6px;
+    display: inline-block;
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.role:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.role:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.role:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.role:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding Responsiveness to About Section */
+
+@media (max-width: 1024px) {
+    .about-container {
+        gap: 30px;
+       
+    }
+
+    .roles {
+        font-size: 32px;
+        margin-left: 50px;
+    }
+
+    .role {
+        font-size: 30px;
+        padding: 5px 12px;
+    }
+
+    .intro-line {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* For smaller screens */
+    .about-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .roles {
+        margin-left: 0;
+        font-size: 28px;
+    }
+
+    .role {
+        font-size: 24px;
+        padding: 5px 10px;
+    }
+
+    .iam {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For very small screens */
+    .about-section {
+        padding: 60px 10px;
+    }
+
+    .about-container {
+        gap: 20px;
+    }
+
+    .roles {
+        font-size: 24px;
+        margin-left: 0;
+    }
+
+    .role {
+        font-size: 20px;
+        padding: 4px 8px;
+
+    }
+
+    .iam {
+        font-size: 18px;
+    }
+
+    .intro-line {
+        margin-top: 20px;
+    }
+}
+
+/* skills section */
+
+
+.skills-section {
+    text-align: center;
+    padding: 50px 20px;
+    font-family: 'Courier New', monospace;
+    background-color: #f8f8f8;
+}
+
+.skills-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.skill-group {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.group-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 150px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.skill-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.skill-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #e6f2ff;
+    cursor: pointer;
+}
+
+
+/* Adding responsiveness to Skill Section */
+
+@media (max-width: 1024px) {
+    .skills-title {
+        font-size: 28px;
+    }
+
+    .skills-grid {
+        gap: 30px;
+    }
+
+    .skill-item {
+        width: 100px;
+        height: 130px;
+    }
+
+    .skill-item img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* For smaller screens (tablets) */
+    .skills-title {
+        font-size: 24px;
+    }
+
+    .skills-grid {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .skill-item {
+        width: 90px;
+        height: 120px;
+    }
+
+    .skill-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For very small screens (mobile) */
+    .skills-title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .skills-grid {
+        gap: 15px;
+    }
+
+    .skill-item {
+        width: 80px;
+        height: 100px;
+    }
+
+    .skill-item img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* project */
+
+.projects-section {
+    padding: 80px 20px;
+    background-color: #f8f8f8;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+
+.projects-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #111;
+    font-weight: bold;
+}
+
+
+.projects-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.project-card {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+
+
+.project-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+
+
+.tech-stack {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.project-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: #0056b3;
+}
+
+
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+.project-desc {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+
+.project-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: #007bff;
+}
+
+
+/* Adding Responsiveness to Project Section */
+
+@media (max-width: 1024px) {
+    .projects-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .projects-row {
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 280px;
+    }
+
+    .project-name {
+        font-size: 20px;
+    }
+
+    .project-desc {
+        font-size: 14px;
+    }
+
+    .tech-stack {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* For smaller screens (tablets) */
+    .projects-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .projects-row {
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 250px;
+    }
+
+    .project-name {
+        font-size: 18px;
+    }
+
+    .project-desc {
+        font-size: 14px;
+    }
+
+    .tech-stack {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For very small screens (mobile) */
+    .projects-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .projects-row {
+        gap: 15px;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .project-name {
+        font-size: 16px;
+    }
+
+    .project-desc {
+        font-size: 12px;
+    }
+
+    .tech-stack {
+        font-size: 10px;
+    }
+}
+
+/* contact */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    font-family: 'Courier New', monospace;
+    background-color: #f8f8f8;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-section .left,
+.contact-section .right {
+    flex: 1;
+    min-width: 300px;
+    font-weight: bold;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.name-fields {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.name-fields input {
+    flex: 1;
+    min-width: 140px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 0.75rem;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-section button {
+    padding: 0.75rem 1.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.right {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.right p {
+    font-size: 20px;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.wrapper {
+    display: inline-block;
+    text-align: left;
+}
+
+.socials img {
+    width: 60px;
+    height: auto;
+    margin: 0;
+}
+
+.socials a,
+.right a {
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.socials a:hover,
+.right a:hover {
+    transform: scale(1.2);
+}
+
+.resume-block {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.resume-block p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.resume-block img {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.resume-block img:hover {
+    transform: scale(1.05);
+}
+
+.thank-you-message {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    color: green;
+    margin-top: 1rem;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+/* Adding Responsiveness to Contact Section */
+
+@media (max-width: 1024px) {
+    .contact-section {
+        padding: 1.5rem;
+    }
+
+    .contact-section .left,
+    .contact-section .right {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
+    .contact-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+    }
+
+    .contact-section form {
+        gap: 0.8rem;
+    }
+
+    .name-fields input {
+        min-width: 120px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+        padding: 0.6rem;
+    }
+
+    .contact-section button {
+        padding: 0.7rem 1.3rem;
+    }
+
+    .right p {
+        font-size: 18px;
+    }
+
+    .socials img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 1rem;
+    }
+
+    .contact-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-section p {
+        font-size: 0.95rem;
+    }
+
+    .contact-section form {
+        gap: 0.5rem;
+    }
+
+    .name-fields input {
+        min-width: 100px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+        padding: 0.5rem;
+    }
+
+    .contact-section button {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .socials img {
+        width: 40px;
+    }
+
+    .resume-block img {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For mobile devices */
+    .contact-section {
+        padding: 0.8rem;
+    }
+
+    .contact-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-section p {
+        font-size: 0.9rem;
+    }
+
+    .contact-section form {
+        gap: 0.4rem;
+    }
+
+    .name-fields input {
+        min-width: 80px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+        padding: 0.5rem;
+    }
+
+    .contact-section button {
+        padding: 0.5rem 1rem;
+    }
+
+    .socials img {
+        width: 35px;
+    }
+
+    .resume-block img {
+        width: 80px;
+    }
+}
